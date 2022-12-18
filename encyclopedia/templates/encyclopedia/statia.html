@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ statiaHead }}
+{% endblock %}
+
+{% block body %}
+    {{ statia|safe }}
+    <form action="{% url 'encyclopedia:edit_page' statiaHead %}">
+        <input type="hidden" value="{{statiaHead}}" name="statiaHead">
+        <input type="submit" method="get" value="Edit page" class="btn btn-success">
+    </form>
+{% endblock %}
